@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { DOCUMENT } from '@angular/common';
+import { Component, HostListener, Inject } from '@angular/core';
 
 @Component({
   selector: 'app-nav-menu',
@@ -7,6 +8,19 @@ import { Component } from '@angular/core';
 })
 export class NavMenuComponent {
   isExpanded = false;
+
+  constructor(@Inject(DOCUMENT) private document: Document) { }
+
+  @HostListener('window:scroll', [])
+  onWindowScroll() {
+    if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+      document.getElementById('navbar')?.classList.add('is-scrolled');
+      document.getElementById('navbar')?.classList.add('bg-secondary-subtle');
+    } else {
+      document.getElementById('navbar')?.classList.remove('is-scrolled');
+      document.getElementById('navbar')?.classList.remove('bg-secondary-subtle');
+    }
+  }
 
   collapse() {
     this.isExpanded = false;

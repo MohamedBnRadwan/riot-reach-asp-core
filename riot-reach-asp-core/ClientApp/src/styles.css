@@ -1,20 +1,93 @@
 /* You can add global styles to this file, and also import other style files */
+@import url('assets/fonts/poppins-fonts.css');
+@import url('assets/rr-animation.css');
+
 
 /* Provide sufficient contrast against white background */
-a {
-  color: #0366d6;
+/*init*/
+
+:root {
+  font-size: 15px;
+  line-height: 0.9;
+  --color-primary: #ECD06F;
+  --color-secondary: #203E5F;
+  --text-blue: #203E5F;
+  --text-dark: #1A2634;
+  --text-black: #111;
+  --bg-dark: #222;
+  --text-light: #DDD;
+  --text-white: #EEE;
 }
 
-.btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+body {
+  font-size: 15px;
+  font-family: Poppins-Regular;
+  height: 600vh;
 }
 
-code {
-  color: #e01a76;
+#main-container {
+  margin-top: 150px;
+  min-height: 100vh;
+}
+/*init*/
+/*rolz*/
+.bg-text-dark {
+  background-color: var(--bg-dark);
+  color: var(--text-white);
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #1b6ec2;
-  border-color: #1861ac;
+.bg-text-light {
+  background-color: var(--text-white);
+  color: var(--text-blue);
 }
+
+/*rolz*/
+/*intro*/
+.intro {
+  height: 100vh;
+}
+.intro:before {
+  content:'';
+  background-image: url(assets/imgs/bg-columns.png)
+}
+
+  .intro .mt-33 {
+    margin-top: 25%;
+  }
+/*intro*/
+/*header navbar with animation*/
+.site-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 10;
+  animation: fadeInAndDown .2s ease .7s 1 both;
+}
+
+  .site-header .container {
+    display: flex;
+    height: 8.3125rem;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+  }
+
+  .site-header, .site-header .container {
+    transition: all .25s ease;
+  }
+
+    .site-header.is-scrolled {
+      background-color: #121212;
+      color: #fff;
+    }
+
+      .site-header.is-scrolled .container {
+        height: unset;
+      }
+
+      .site-header.is-scrolled a, .site-header.is-scrolled .btn {
+        color: #fff;
+        border-color: #eee;
+      }
+/*header navbar animation*/

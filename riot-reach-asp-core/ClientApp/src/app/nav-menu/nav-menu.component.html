@@ -1,41 +1,38 @@
-<header>
-  <nav
-    class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3"
-  >
+<header id="navbar" class="site-header">
+  <nav class="navbar navbar-expand-sm navbar-toggleable-sm">
     <div class="container">
-      <a class="navbar-brand" [routerLink]="['/']">riot_reach_asp_core</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target=".navbar-collapse"
-        aria-label="Toggle navigation"
-        [attr.aria-expanded]="isExpanded"
-        (click)="toggle()"
-      >
+      <a class="navbar-brand d-flex flex-row align-content-between p-0" style="gap: 15px" [routerLink]="['/']">
+        <img src="assets/imgs/logo-animate.svg" width="60" />
+        <h2 class="m-0 d-flex flex-row align-items-center p-0">
+          <span class="light">Riot</span>
+          <span class="bold">Reach</span>
+        </h2>
+      </a>
+      <button class="navbar-toggler"
+              type="button"
+              data-toggle="collapse"
+              data-target=".navbar-collapse"
+              aria-label="Toggle navigation"
+              [attr.aria-expanded]="isExpanded"
+              (click)="toggle()">
         <span class="navbar-toggler-icon"></span>
       </button>
-      <div
-        class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
-        [ngClass]="{ show: isExpanded }"
-      >
+      <div class="navbar-collapse collapse d-sm-inline-flex justify-content-end"
+           [ngClass]="{ show: isExpanded }">
         <ul class="navbar-nav flex-grow">
-          <li
-            class="nav-item"
-            [routerLinkActive]="['link-active']"
-            [routerLinkActiveOptions]="{ exact: true }"
-          >
-            <a class="nav-link text-dark" [routerLink]="['/']">Home</a>
+          <!--[routerLinkActiveOptions]="{ exact: true }"-->
+          <li class="nav-item" [routerLinkActive]="['link-active']">
+            <a class="nav-link" [routerLink]="['/fetch-data']">Our Work</a>
+          </li>
+          <li class="nav-item"
+              [routerLinkActive]="['link-active']">
+            <a class="nav-link" [routerLink]="['/']">Marketing</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/counter']"
-              >Counter</a
-            >
+            <a class="nav-link" [routerLink]="['/counter']">Web Services</a>
           </li>
           <li class="nav-item" [routerLinkActive]="['link-active']">
-            <a class="nav-link text-dark" [routerLink]="['/fetch-data']"
-              >Fetch data</a
-            >
+            <a class="btn btn-outline-dark" [routerLink]="['/fetch-data']">Schedule Free Meeting <i class="fal fa-calender"></i></a>
           </li>
         </ul>
       </div>
