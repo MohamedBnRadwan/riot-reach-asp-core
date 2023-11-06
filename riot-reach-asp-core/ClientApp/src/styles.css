@@ -14,15 +14,17 @@
   --text-blue: #203E5F;
   --text-dark: #1A2634;
   --text-black: #111;
-  --bg-dark: #222;
+  --bg-dark: #202020;
   --text-light: #DDD;
-  --text-white: #EEE;
+  --text-white: #ffffffcf;
 }
 
 body {
   font-size: 15px;
   font-family: Poppins-Regular;
   height: 600vh;
+  background-color: #191919;
+  color: #ffffffcf;
 }
 
 #main-container {
@@ -46,10 +48,11 @@ body {
 .intro {
   height: 100vh;
 }
-.intro:before {
-  content:'';
-  background-image: url(assets/imgs/bg-columns.png)
-}
+
+  .intro:before {
+    content: '';
+    background-image: url(assets/imgs/bg-columns.png)
+  }
 
   .intro .mt-33 {
     margin-top: 25%;
@@ -62,10 +65,11 @@ body {
   left: 0;
   width: 100%;
   z-index: 10;
-  animation: fadeInAndDown .2s ease .7s 1 both;
+  animation: fadeInAndDown 1.5s ease 0.7s 1 both;
+  /*background-color: #121212;*/
 }
 
-  .site-header .container {
+  .site-header .container-fluid {
     display: flex;
     height: 8.3125rem;
     justify-content: space-between;
@@ -73,21 +77,25 @@ body {
     position: relative;
   }
 
-  .site-header, .site-header .container {
-    transition: all .25s ease;
+  .site-header a, .site-header .btn, .site-header h2 span {
+    color: #ffffff;
+    border-color: #EEEEEEAD;
+  }
+
+  .site-header, .site-header .container-fluid {
+    transition: all 0.7s ease;
   }
 
     .site-header.is-scrolled {
-      background-color: #121212;
-      color: #fff;
+      background-color: #202020;
     }
 
-      .site-header.is-scrolled .container {
-        height: unset;
+      .site-header.is-scrolled .container-fluid {
+        height: 3rem;
       }
 
-      .site-header.is-scrolled a, .site-header.is-scrolled .btn {
-        color: #fff;
-        border-color: #eee;
+      .site-header.is-scrolled a, .site-header.is-scrolled .btn, .site-header.is-scrolled h2 span {
+        color: #EEEEEEAD;
+        border-color: #ffffffcf;
       }
 /*header navbar animation*/
